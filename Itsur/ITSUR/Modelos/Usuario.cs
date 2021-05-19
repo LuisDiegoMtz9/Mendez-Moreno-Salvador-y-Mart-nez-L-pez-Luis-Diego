@@ -9,6 +9,7 @@ namespace Modelos
     public class Usuario
     {
         public int IdUsuario { get; set; }
+        public String ClaveGenerica { get; set; }
         public String Nombre { get; set; }
         public String Apellido { get; set; }
         public int TipoUsuario { get; set; }

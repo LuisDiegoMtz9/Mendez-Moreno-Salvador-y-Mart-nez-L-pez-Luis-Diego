@@ -108,5 +108,6 @@ namespace Datos
             int resultado = Conexion.ejecutarSentencia(delete);
             return (resultado > 0);
         }
+      
     }
 }
