@@ -51,50 +51,57 @@ namespace ITSUR
             // 
             // txtIdGrupo
             // 
-            this.txtIdGrupo.Location = new System.Drawing.Point(70, 14);
+            this.txtIdGrupo.Location = new System.Drawing.Point(52, 11);
+            this.txtIdGrupo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtIdGrupo.Name = "txtIdGrupo";
-            this.txtIdGrupo.Size = new System.Drawing.Size(120, 22);
+            this.txtIdGrupo.Size = new System.Drawing.Size(91, 20);
             this.txtIdGrupo.TabIndex = 0;
+            this.txtIdGrupo.TextChanged += new System.EventHandler(this.txtIdGrupo_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(34, 16);
+            this.label1.Location = new System.Drawing.Point(26, 13);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(19, 17);
+            this.label1.Size = new System.Drawing.Size(16, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Id";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(65, 142);
+            this.label2.Location = new System.Drawing.Point(49, 115);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 17);
+            this.label2.Size = new System.Drawing.Size(66, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Clave Grupo";
             // 
             // txtClaveGrupo
             // 
-            this.txtClaveGrupo.Location = new System.Drawing.Point(169, 142);
+            this.txtClaveGrupo.Location = new System.Drawing.Point(127, 115);
+            this.txtClaveGrupo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtClaveGrupo.MaxLength = 4;
             this.txtClaveGrupo.Name = "txtClaveGrupo";
-            this.txtClaveGrupo.Size = new System.Drawing.Size(166, 22);
+            this.txtClaveGrupo.Size = new System.Drawing.Size(126, 20);
             this.txtClaveGrupo.TabIndex = 3;
             // 
             // txtCupo
             // 
-            this.txtCupo.Location = new System.Drawing.Point(169, 175);
+            this.txtCupo.Location = new System.Drawing.Point(127, 142);
+            this.txtCupo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtCupo.Name = "txtCupo";
-            this.txtCupo.Size = new System.Drawing.Size(166, 22);
+            this.txtCupo.Size = new System.Drawing.Size(126, 20);
             this.txtCupo.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(111, 180);
+            this.label3.Location = new System.Drawing.Point(83, 146);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 17);
+            this.label3.Size = new System.Drawing.Size(32, 13);
             this.label3.TabIndex = 4;
             this.label3.Text = "Cupo";
             // 
@@ -103,26 +110,29 @@ namespace ITSUR
             this.cboCarrera.DisplayMember = "Nombre";
             this.cboCarrera.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCarrera.FormattingEnabled = true;
-            this.cboCarrera.Location = new System.Drawing.Point(169, 69);
+            this.cboCarrera.Location = new System.Drawing.Point(127, 56);
+            this.cboCarrera.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cboCarrera.Name = "cboCarrera";
-            this.cboCarrera.Size = new System.Drawing.Size(286, 24);
+            this.cboCarrera.Size = new System.Drawing.Size(216, 21);
             this.cboCarrera.TabIndex = 12;
             this.cboCarrera.ValueMember = "claveCarrera";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(96, 71);
+            this.label7.Location = new System.Drawing.Point(72, 58);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(56, 17);
+            this.label7.Size = new System.Drawing.Size(41, 13);
             this.label7.TabIndex = 13;
             this.label7.Text = "Carrera";
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(169, 325);
+            this.btnGuardar.Location = new System.Drawing.Point(127, 264);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(95, 33);
+            this.btnGuardar.Size = new System.Drawing.Size(71, 27);
             this.btnGuardar.TabIndex = 14;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
@@ -130,9 +140,10 @@ namespace ITSUR
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(317, 325);
+            this.btnCancelar.Location = new System.Drawing.Point(238, 264);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(95, 33);
+            this.btnCancelar.Size = new System.Drawing.Size(71, 27);
             this.btnCancelar.TabIndex = 16;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -141,9 +152,10 @@ namespace ITSUR
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(97, 109);
+            this.label8.Location = new System.Drawing.Point(73, 89);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(55, 17);
+            this.label8.Size = new System.Drawing.Size(42, 13);
             this.label8.TabIndex = 18;
             this.label8.Text = "Materia";
             // 
@@ -152,9 +164,10 @@ namespace ITSUR
             this.cboMateria.DisplayMember = "Nombre";
             this.cboMateria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMateria.FormattingEnabled = true;
-            this.cboMateria.Location = new System.Drawing.Point(169, 107);
+            this.cboMateria.Location = new System.Drawing.Point(127, 87);
+            this.cboMateria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cboMateria.Name = "cboMateria";
-            this.cboMateria.Size = new System.Drawing.Size(286, 24);
+            this.cboMateria.Size = new System.Drawing.Size(216, 21);
             this.cboMateria.TabIndex = 17;
             this.cboMateria.ValueMember = "claveCarrera";
             // 
@@ -162,9 +175,10 @@ namespace ITSUR
             // 
             this.pnlId.Controls.Add(this.label1);
             this.pnlId.Controls.Add(this.txtIdGrupo);
-            this.pnlId.Location = new System.Drawing.Point(99, 11);
+            this.pnlId.Location = new System.Drawing.Point(74, 9);
+            this.pnlId.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlId.Name = "pnlId";
-            this.pnlId.Size = new System.Drawing.Size(235, 46);
+            this.pnlId.Size = new System.Drawing.Size(176, 37);
             this.pnlId.TabIndex = 19;
             // 
             // cklDias
@@ -176,17 +190,19 @@ namespace ITSUR
             "Miercoles",
             "Jueves",
             "Viernes"});
-            this.cklDias.Location = new System.Drawing.Point(169, 209);
+            this.cklDias.Location = new System.Drawing.Point(127, 170);
+            this.cklDias.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cklDias.Name = "cklDias";
-            this.cklDias.Size = new System.Drawing.Size(223, 106);
+            this.cklDias.Size = new System.Drawing.Size(168, 79);
             this.cklDias.TabIndex = 22;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(58, 242);
+            this.label5.Location = new System.Drawing.Point(44, 197);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(105, 17);
+            this.label5.Size = new System.Drawing.Size(81, 13);
             this.label5.TabIndex = 23;
             this.label5.Text = "Días asignados";
             // 
@@ -208,25 +224,27 @@ namespace ITSUR
             "17",
             "18",
             "19"});
-            this.cboHorario.Location = new System.Drawing.Point(419, 239);
+            this.cboHorario.Location = new System.Drawing.Point(314, 194);
+            this.cboHorario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cboHorario.Name = "cboHorario";
-            this.cboHorario.Size = new System.Drawing.Size(121, 24);
+            this.cboHorario.Size = new System.Drawing.Size(92, 21);
             this.cboHorario.TabIndex = 24;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(416, 209);
+            this.label6.Location = new System.Drawing.Point(312, 170);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(55, 17);
+            this.label6.Size = new System.Drawing.Size(41, 13);
             this.label6.TabIndex = 25;
             this.label6.Text = "Horario";
             // 
             // FrmGrupo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(662, 396);
+            this.ClientSize = new System.Drawing.Size(496, 322);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cboHorario);
             this.Controls.Add(this.label5);
@@ -242,6 +260,7 @@ namespace ITSUR
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtClaveGrupo);
             this.Controls.Add(this.label2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmGrupo";
             this.Text = "Grupo";
             this.pnlId.ResumeLayout(false);

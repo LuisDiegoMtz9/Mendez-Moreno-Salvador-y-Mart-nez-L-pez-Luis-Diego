@@ -39,49 +39,7 @@ namespace ITSUR
         }
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (esValido() == true)
-            {
-                carrera obj = llenarDatos();
-                DAOCarrera dao = new DAOCarrera();
-                bool resultado;
-                try
-                {
-                    if (clave == null)
-                    {
-                        resultado = dao.insertar(obj);
-                    }
-                    else
-                    {
-                        resultado = dao.actualizar(obj);
-                    }
-
-                    if (resultado)
-                    {
-                        MessageBox.Show(this, "Carrera almacenada exitósamente", "Operación exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show(this, "Ha ocurrido un error al realizar la operación", "Operación fallida", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                catch (Exception ex)
-                {
-
-                    if (ex.Message.Equals("Duplicado"))
-                    {
-                        MessageBox.Show(this, "La clave de la carrera o el nombre esta duplicada", "Operación fallida", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    else
-                    {
-                        MessageBox.Show(this, "Ha ocurrido un error al realizar la operación", "Operación fallida", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-            }
-            else
-            {
-                MessageBox.Show(this, "Uno o varios de los datos del alumno no son válidos, revisa la información y vuelve a intentar", "Datos no válidos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            
 
         }
         private bool esValido()
@@ -135,6 +93,53 @@ namespace ITSUR
             carre.Inicial = txtInicial.Text;
 
             return carre;
+        }
+
+        private void btnAgregar_Click_1(object sender, EventArgs e)
+        {
+            if (esValido() == true)
+            {
+                carrera obj = llenarDatos();
+                DAOCarrera dao = new DAOCarrera();
+                bool resultado;
+                try
+                {
+                    if (clave == null)
+                    {
+                        resultado = dao.insertar(obj);
+                    }
+                    else
+                    {
+                        resultado = dao.actualizar(obj);
+                    }
+
+                    if (resultado)
+                    {
+                        MessageBox.Show(this, "Carrera almacenada exitósamente", "Operación exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show(this, "Ha ocurrido un error al realizar la operación", "Operación fallida", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                    if (ex.Message.Equals("Duplicado"))
+                    {
+                        MessageBox.Show(this, "La clave de la carrera o el nombre esta duplicada", "Operación fallida", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        MessageBox.Show(this, "Ha ocurrido un error al realizar la operación", "Operación fallida", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show(this, "Uno o varios de los datos del alumno no son válidos, revisa la información y vuelve a intentar", "Datos no válidos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }
