@@ -47,10 +47,6 @@ namespace ITSUR
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(514, 247);
             this.dataGridView1.TabIndex = 1;
-<<<<<<< HEAD:Itsur 2/ITSUR/ITSUR/Inscripcion.Designer.cs
-            this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
-=======
->>>>>>> b6a4e139466965be7f41ba4b0c9a41799445730a:Itsur/ITSUR/ITSUR/Inscripcion.Designer.cs
             // 
             // Terminar
             // 
