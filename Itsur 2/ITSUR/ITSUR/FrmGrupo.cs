@@ -22,7 +22,7 @@ namespace ITSUR
             
             cboCarrera.DataSource = new DAOCarrera().obtenerTodas();
             cboCarrera.DisplayMember = "Nombre";
-            cboCarrera.ValueMember = "Clave";
+            cboCarrera.ValueMember = "ClaveCarrera";
 
             if (idGrupo == 0) {
                 pnlId.Visible = false;
@@ -156,6 +156,11 @@ namespace ITSUR
             cboMateria.DataSource = new DAOMateria().obtenerXCarrera(int.Parse(cboCarrera.SelectedValue.ToString()));
             cboMateria.DisplayMember = "Materia";
             cboMateria.ValueMember = "Id";
+        }
+
+        private void txtIdGrupo_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

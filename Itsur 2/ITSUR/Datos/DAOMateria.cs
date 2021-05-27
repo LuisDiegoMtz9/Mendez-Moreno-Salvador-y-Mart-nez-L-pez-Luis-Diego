@@ -25,11 +25,12 @@ namespace Datos
         public DataTable obtenerXCarrera(int idCarrera)
         {
             MySqlCommand consulta =
-                new MySqlCommand(@"SELECT Id, m.Nombre Materia, ClaveCarrera, 
-                    Creditos
-                    FROM Materias m
-                    WHERE ClaveCarrera=@ClaveCarrera
-                    ORDER BY Materia");
+                new MySqlCommand(@"select g.id, m.nombre as Materia, g.clavegrupo as `Clave Grupo`, 
+                    g.horario as Horario, g.dias as Dias, g.cupo as Cupo, m.creditos as Creditos from 
+                    carreras c join materias m join grupos g
+                    on @ClaveCarrera=c.claveCarrera and c.claveCarrera=m.clavecarrera and m.id=g.clavemateria
+                    where g.cupo>0 
+                    ");
             consulta.Parameters.AddWithValue("@ClaveCarrera",idCarrera);
             return Conexion.ejecutarConsulta(consulta);
 

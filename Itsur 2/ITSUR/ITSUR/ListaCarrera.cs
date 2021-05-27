@@ -26,6 +26,23 @@ namespace ITSUR
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+           
+        }
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+
+            Registro form = new Registro();
+            form.ShowDialog();
+            cargarLista();
+        }
+
+        private void btnEditar_Click_1(object sender, EventArgs e)
+        {
             if (dgvLista.SelectedRows.Count > 0)
             {
                 String clave = dgvLista.SelectedRows[0].Cells[0].Value.ToString();
@@ -39,7 +56,7 @@ namespace ITSUR
             }
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private void btnEliminar_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -81,13 +98,6 @@ namespace ITSUR
                 }
             }
 
-        }
-        private void btnAgregar_Click(object sender, EventArgs e)
-        {
-
-            Registro form = new Registro();
-            form.ShowDialog();
-            cargarLista();
         }
     }
 }

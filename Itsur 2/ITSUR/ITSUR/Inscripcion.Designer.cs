@@ -30,10 +30,6 @@ namespace ITSUR
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClaveGrupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Horario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Seleccionar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Terminar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,51 +40,19 @@ namespace ITSUR
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Materia,
-            this.ClaveGrupo,
-            this.Horario,
-            this.Seleccionar});
             this.dataGridView1.Location = new System.Drawing.Point(41, 106);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(514, 247);
             this.dataGridView1.TabIndex = 1;
-            // 
-            // Materia
-            // 
-            this.Materia.HeaderText = "Materia";
-            this.Materia.MinimumWidth = 6;
-            this.Materia.Name = "Materia";
-            this.Materia.Width = 125;
-            // 
-            // ClaveGrupo
-            // 
-            this.ClaveGrupo.HeaderText = "Clave Grupo";
-            this.ClaveGrupo.MinimumWidth = 6;
-            this.ClaveGrupo.Name = "ClaveGrupo";
-            this.ClaveGrupo.Width = 125;
-            // 
-            // Horario
-            // 
-            this.Horario.HeaderText = "Horario";
-            this.Horario.MinimumWidth = 6;
-            this.Horario.Name = "Horario";
-            this.Horario.Width = 125;
-            // 
-            // Seleccionar
-            // 
-            this.Seleccionar.HeaderText = "Seleccionar";
-            this.Seleccionar.MinimumWidth = 6;
-            this.Seleccionar.Name = "Seleccionar";
-            this.Seleccionar.Width = 125;
+            this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             // 
             // Terminar
             // 
             this.Terminar.Location = new System.Drawing.Point(248, 36);
-            this.Terminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Terminar.Margin = new System.Windows.Forms.Padding(2);
             this.Terminar.Name = "Terminar";
             this.Terminar.Size = new System.Drawing.Size(56, 19);
             this.Terminar.TabIndex = 2;
@@ -136,7 +100,7 @@ namespace ITSUR
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Terminar);
             this.Controls.Add(this.dataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Inscripcion";
             this.Text = "Inscripcion";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -148,10 +112,6 @@ namespace ITSUR
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Materia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ClaveGrupo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Horario;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Seleccionar;
         private System.Windows.Forms.Button Terminar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

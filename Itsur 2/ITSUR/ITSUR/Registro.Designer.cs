@@ -107,6 +107,7 @@ namespace ITSUR
             this.btnAgregar.TabIndex = 10;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click_1);
             // 
             // errorProvider1
             // 
