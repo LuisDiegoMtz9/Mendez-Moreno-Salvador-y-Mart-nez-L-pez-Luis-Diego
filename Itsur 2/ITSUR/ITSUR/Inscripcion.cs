@@ -28,23 +28,32 @@ namespace ITSUR
         }
         public void hilo()
         {
-
             for (int i = 0; i < dataGridView1.RowCount - 1; i++)
             {
-                if (Int16.Parse(dataGridView1.Rows[i].Cells[5].Value.ToString()) <= 5)
+            
+                if (Int32.Parse(dataGridView1.Rows[i].Cells[5].Value.ToString()) <= 5)
                 {
-                    actualizar(dataGridView1.Rows[i].Cells[1].Value.ToString());
+                    actualizar();
                     Thread.Sleep(15000);
 
                 }
             }
             hilo();
+           
         }
 
-        public void actualizar(String a)
+        public void actualizar()
         {
-            MessageBox.Show("Solo quedan 5 cupos, inscribete antes que se llene la materia: " + a);
+            //notify.Text = "Quedan pocos espacios";
+            //notify.BalloonTipTitle="Corre";
+            //notify.BalloonTipText = "Quedan pocos espacios en los grupos";
+            //notify.BalloonTipIcon = ToolTipIcon.Info;
+            //notify.Visible = true;
+            //notify.ShowBalloonTip(4000);
+            MessageBox.Show("Quedan pocos lugares en los grupos");
+
         }
+
         private void cargarLista()
         {
             DAOAlumno alumno = new DAOAlumno();
@@ -60,7 +69,7 @@ namespace ITSUR
         {
 
         }
-
+        int p;
         private void Terminar_Click(object sender, EventArgs e)
         {
             DAOAlumno obj = new DAOAlumno();
@@ -76,9 +85,17 @@ namespace ITSUR
                 else
                 {
                     MessageBox.Show(this, "Los Datos no son validos", "Datos no válidos", MessageBoxButtons.OK);
+                    p = 1;
                 }
+                if (p!=0)
+                {
 
-                MessageBox.Show("Inscripccion exitosa", "Bien", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    MessageBox.Show("Inscripccion exitosa", "Bien", MessageBoxButtons.OK);
+                }
+                
             }
             else
             {
@@ -87,6 +104,7 @@ namespace ITSUR
                 this.Hide();
             }
         }
+
         public bool esValido()
         {
             list.Sort();
@@ -97,8 +115,11 @@ namespace ITSUR
                 {
                     MessageBox.Show("Agregado correctamente.", "LISTO",
                     MessageBoxButtons.OK);
-                   //label1.Text = ((int.Parse(label1.Text)) -
-                   //     (int.Parse(dataGridView1.SelectedRows[0].Cells[6].Value.ToString()))) + "";
+
+                    //int lb = Int16.Parse(label1.Text.);
+
+                    label2.Text = ((int.Parse(label2.Text)) -
+                         (int.Parse(dataGridView1.SelectedRows[0].Cells[6].Value.ToString()))) + "";
                     return true;
                 }
                 else
@@ -145,7 +166,7 @@ namespace ITSUR
                             {
 
                                 int aux2, total;
-                                total = int.Parse(label1.Text);
+                                total = int.Parse(label2.Text);
 
                                 for (int i = 0; i < list.Count; i++)
                                 {
@@ -161,7 +182,7 @@ namespace ITSUR
                                 }
                                 if (cont == 0)
                                 {
-                                    label1.Text = total + "";
+                                    label2.Text = total + "";
                                     return true;
                                 }
                                 else
@@ -209,7 +230,6 @@ namespace ITSUR
 
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-
             int tabla = dataGridView1.CurrentRow.Index;
             dataGridView1.Rows[tabla].Selected = false;
 

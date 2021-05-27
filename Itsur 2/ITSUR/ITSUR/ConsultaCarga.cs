@@ -20,6 +20,9 @@ namespace ITSUR
             InitializeComponent();
             cargarLista();
         }
+
+
+
         private void cargarLista()
         {
             DAOInscripccion alumno = new DAOInscripccion();

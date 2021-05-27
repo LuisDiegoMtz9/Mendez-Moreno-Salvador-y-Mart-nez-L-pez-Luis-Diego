@@ -13,17 +13,17 @@ namespace Datos
         public DataTable obtenerTodas()
         {
             MySqlCommand consulta =
-                new MySqlCommand(@"SELECT claveCarrera, Nombre, Inicial FROM carreras
-                   ORDER BY claveCarrera");
+                new MySqlCommand(@"SELECT clave, Nombre, Inicial FROM carreras
+                   ORDER BY Nombre");
             return Conexion.ejecutarConsulta(consulta);
         }
 
         public carrera obtenerUno(String clave)
         {
             MySqlCommand consulta =
-                new MySqlCommand(@"SELECT claveCarrera, Nombre, Inicial
+                new MySqlCommand(@"SELECT clave, Nombre, Inicial
                     FROM carreras  
-                    WHERE claveCarrera=@claveCarrera");
+                    WHERE clave=@claveCarrera");
             consulta.Parameters.AddWithValue("@claveCarrera", clave);
             DataTable resultado = Conexion.ejecutarConsulta(consulta);
             if (resultado != null && resultado.Rows.Count > 0)
@@ -53,7 +53,7 @@ namespace Datos
             insert.Parameters.AddWithValue("@claveCarrera", obj.claveCarrera);
             insert.Parameters.AddWithValue("@Nombre", obj.Nombre);
             insert.Parameters.AddWithValue("@Inicial", obj.Inicial);
-   
+
 
             int resultado = Conexion.ejecutarSentencia(insert);
             return (resultado > 0);
@@ -64,7 +64,7 @@ namespace Datos
             MySqlCommand update = new MySqlCommand(
                 @"UPDATE carreras
                 SET Nombre=@Nombre,Inicial=@Inicial
-                WHERE claveCarrera=@claveCarrera"
+                WHERE clave=@claveCarrera"
                 );
             update.Parameters.AddWithValue("@claveCarrera", obj.claveCarrera);
             update.Parameters.AddWithValue("@Nombre", obj.Nombre);
@@ -76,9 +76,9 @@ namespace Datos
         public bool eliminar(String clave)
         {
             MySqlCommand delete = new MySqlCommand(
-                @"DELETE FROM carreras
-                WHERE claveCarrera=@claveCarrera"
-                );
+                     @"DELETE FROM carreras
+                WHERE clave=@claveCarrera"
+                     );
             delete.Parameters.AddWithValue("@claveCarrera", clave);
 
             int resultado = Conexion.ejecutarSentencia(delete);

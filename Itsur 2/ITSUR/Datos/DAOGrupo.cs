@@ -14,7 +14,7 @@ namespace Datos
                 new MySqlCommand(@"SELECT g.Id, g.ClaveGrupo, m.Nombre Materia, c.Nombre Carrera,g.Cupo
                     FROM Grupos g
                     JOIN Materias m ON g.ClaveMateria=m.Id
-                    JOIN Carreras c ON m.ClaveCarrera=c.ClaveCarrera
+                    JOIN Carreras c ON m.ClaveCarrera=c.Clave
                     ORDER BY Carrera, Materia, ClaveGrupo;");
             return Conexion.ejecutarConsulta(consulta);
 

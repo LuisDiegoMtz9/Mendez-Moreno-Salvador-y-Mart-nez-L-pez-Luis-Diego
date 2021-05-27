@@ -13,11 +13,11 @@ namespace Datos
         public DataTable Inscripcion(String noControl)
         {
             MySqlCommand consulta =
-               new MySqlCommand(@"select al.idgrupo as Id,m.nombre as Materia, g.clavegrupo as `Clave Grupo`, 
+              new MySqlCommand(@"select ag.idgrupo as Id,m.nombre as Materia, g.clavegrupo as `Clave Grupo`, 
                     g.horario as Horario, g.dias as Dias from 
-                    alumnosgrupos al join grupos g join materias m
-                    on @noControl=al.nocontrol and al.idgrupo=g.id and g.clavemateria=m.id");
-            consulta.Parameters.AddWithValue("@NoControl", noControl);
+                    alumnosgrupos ag join grupos g join materias m
+                    on @noControl=ag.nocontrol and ag.idgrupo=g.id and g.clavemateria=m.id");
+            consulta.Parameters.AddWithValue("@noControl", noControl);
             return Conexion.ejecutarConsulta(consulta);
         }
         public void insertar(List<int> lista, String noControl)

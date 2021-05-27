@@ -12,11 +12,10 @@ namespace Datos
         public DataTable obtenerTodas()
         {
             MySqlCommand consulta =
-                new MySqlCommand(@"SELECT Id, m.Nombre Materia, c.ClaveCarrera, 
-                    Creditos, c.Nombre Carrera
-                    FROM Materias m
-                    JOIN Carreras c ON m.ClaveCarrera=c.claveCarrera
-                    ORDER BY Carrera, Materia;");
+                new MySqlCommand(@"SELECT M.nombre Materia, G.claveGrupo Grupo, G.Horario Horario
+                        FROM GRUPOS G JOIN MATERIAS M
+                        ON M.ID=G.claveMateria
+                        ORDER BY MATERIA");
             return Conexion.ejecutarConsulta(consulta);
 
         }
@@ -24,16 +23,16 @@ namespace Datos
 
         public DataTable obtenerXCarrera(int idCarrera)
         {
+
             MySqlCommand consulta =
                 new MySqlCommand(@"select g.id, m.nombre as Materia, g.clavegrupo as `Clave Grupo`, 
                     g.horario as Horario, g.dias as Dias, g.cupo as Cupo, m.creditos as Creditos from 
                     carreras c join materias m join grupos g
-                    on @ClaveCarrera=c.claveCarrera and c.claveCarrera=m.clavecarrera and m.id=g.clavemateria
-                    where g.cupo>0 
-                    ");
-            consulta.Parameters.AddWithValue("@ClaveCarrera",idCarrera);
+                    on @ClaveCarrera=c.clave and c.clave=m.clavecarrera and m.id=g.clavemateria
+                    where g.cupo>0");
+            consulta.Parameters.AddWithValue("@ClaveCarrera", idCarrera);
             return Conexion.ejecutarConsulta(consulta);
-
+         
         }
 
 

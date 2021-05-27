@@ -131,11 +131,7 @@ namespace ITSUR
             return alumno;
         }
 
-        /// <summary>
-        /// Verifica que cada dato proporcionado en el formulario
-        /// esté completo y correcto
-        /// </summary>
-        /// <returns>true en caso que todo sea válido, false en caso contrario</returns>
+
         private bool esValido()
         {
             Regex control = new Regex(@"^([A-Z]|[a-z]){1}[0-9]{8}$");

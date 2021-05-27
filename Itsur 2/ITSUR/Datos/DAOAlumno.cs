@@ -18,7 +18,7 @@ namespace Datos
                     a.Nombre) Alumno,
                     c.Nombre Carrera, a.Inscrito
                     FROM Alumnos a 
-                    JOIN Carreras c ON a.ClaveCarrera = c.ClaveCarrera
+                    JOIN Carreras c ON a.ClaveCarrera = c.clave
                     ORDER BY Carrera, Alumno");
             return Conexion.ejecutarConsulta(consulta);
 
@@ -32,16 +32,18 @@ namespace Datos
                         ifnull(Apellido2,'') Apellido2,
                         Telefono,
                         FechaNac,
-                        ClaveCarrera, Inscrito
+                        ClaveCarrera,
+                        Inscrito
                     FROM Alumnos a 
                     WHERE Nocontrol=@NoControl");
-            consulta.Parameters.AddWithValue("@NoControl",noControl);
-            DataTable resultado= Conexion.ejecutarConsulta(consulta);
+            consulta.Parameters.AddWithValue("@NoControl", noControl);
+            DataTable resultado = Conexion.ejecutarConsulta(consulta);
             if (resultado != null && resultado.Rows.Count > 0)
             {
                 DataRow fila = resultado.Rows[0];
                 //Llenar los datos en un a alumno
-                Alumno alumno = new Alumno() {
+                Alumno alumno = new Alumno()
+                {
                     NoControl = noControl,
                     Nombre = fila["Nombre"].ToString(),
                     Apellido1 = fila["Apellido1"].ToString(),
@@ -53,10 +55,10 @@ namespace Datos
                 };
                 return alumno;
             }
-            else {
+            else
+            {
                 return null;
             }
-
         }
         public bool insertar(Alumno obj) {
             MySqlCommand insert = new MySqlCommand(

@@ -29,11 +29,13 @@ namespace ITSUR
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Terminar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.notify = new System.Windows.Forms.NotifyIcon(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,6 +92,11 @@ namespace ITSUR
             this.label3.TabIndex = 5;
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
+            // notify
+            // 
+            this.notify.Text = "notifyIcon1";
+            this.notify.Visible = true;
+            // 
             // Inscripcion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -116,5 +123,6 @@ namespace ITSUR
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.NotifyIcon notify;
     }
 }
