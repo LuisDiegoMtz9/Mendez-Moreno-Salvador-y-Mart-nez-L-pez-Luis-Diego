@@ -94,6 +94,9 @@ namespace ITSUR
                 else
                 {
                     MessageBox.Show("Inscripccion exitosa", "Bien", MessageBoxButtons.OK);
+                    ConsultaCarga a = new ConsultaCarga();
+                    a.Show();
+                    this.Hide();
                 }
                 
             }
@@ -103,6 +106,7 @@ namespace ITSUR
                 a.Show();
                 this.Hide();
             }
+            
         }
 
         public bool esValido()
@@ -165,15 +169,16 @@ namespace ITSUR
                             if (cont == 0)
                             {
 
-                                int aux2, total;
-                                total = int.Parse(label2.Text);
+                                int re;
+                                int final;
+                                final = int.Parse(label2.Text);
 
                                 for (int i = 0; i < list.Count; i++)
                                 {
-                                    aux2 = int.Parse((dataGridView1.Rows[list[i]].Cells[6].Value.ToString()));
-                                    if (total >= aux2)
+                                    re = int.Parse((dataGridView1.Rows[list[i]].Cells[6].Value.ToString()));
+                                    if (final >= re)
                                     {
-                                        total = total - aux2;
+                                        final= final - re;
                                     }
                                     else
                                     {
@@ -182,7 +187,7 @@ namespace ITSUR
                                 }
                                 if (cont == 0)
                                 {
-                                    label2.Text = total + "";
+                                    label2.Text = final + "";
                                     return true;
                                 }
                                 else
@@ -230,16 +235,16 @@ namespace ITSUR
 
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            int tabla = dataGridView1.CurrentRow.Index;
-            dataGridView1.Rows[tabla].Selected = false;
+            int data= dataGridView1.CurrentRow.Index;
+            dataGridView1.Rows[data].Selected = false;
 
-            if (list.Contains(tabla))
+            if (list.Contains(data))
             {
-                list.Remove(tabla);
+                list.Remove(data);
             }
             else
             {
-                list.Add(tabla);
+                list.Add(data);
             }
 
             foreach (int i in list)
